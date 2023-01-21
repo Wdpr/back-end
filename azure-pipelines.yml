@@ -3,3 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
