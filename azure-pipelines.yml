@@ -49,13 +49,10 @@ steps:
     ArtifactName: 'webapiWDPR'
     publishLocation: 'Container'
 
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
     azureSubscription: 'Gratis proefversie(2bce5fe6-6b21-4b16-a549-7bf47b41de1b)'
     appType: 'webApp'
-    WebAppName: 'WDPR-project'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'WDPRGroup'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    appName: 'WDPR-project'
+    package: '$(Build.ArtifactStagingDirectory)'
+    deploymentMethod: 'auto'
