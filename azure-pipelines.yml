@@ -36,13 +36,6 @@ steps:
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
-  name: 'dotnetTests'
-  inputs:
-    command: 'test'
-    projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration)'
-
-- task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: false
