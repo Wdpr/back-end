@@ -6,10 +6,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
-// Add services to the container.
+
 builder.Services.AddDbContext<TheaterContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("WDPRDatabase")));  // database voor accounts
-// met de volgende stuk code heb ik alle Microsoft services zoals het inloggen en registreren toegevoegd.
-builder.Services.AddIdentity<IdentityUser, IdentityRole>( opt => {
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(opt =>
+{
     // maken van een unieke email
     opt.User.RequireUniqueEmail = true;
     // wachtwoord eisen
@@ -26,7 +26,8 @@ builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(opt =>
+})
+    .AddJwtBearer(opt =>
 {
     opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {

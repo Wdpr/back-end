@@ -7,5 +7,4 @@ public class Stoel
     public int RijNr { get; set; }
     public int StoelNr { get; set; }
     public string? Rang { get; set; }
-
 }

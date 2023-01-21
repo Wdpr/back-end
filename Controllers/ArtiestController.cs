@@ -12,8 +12,6 @@ public class ArtiestController : ControllerBase
 {
     private TheaterContext context;
 
-
-
     public ArtiestController(TheaterContext context)
     {
         this.context = context;
@@ -41,11 +39,9 @@ public class ArtiestController : ControllerBase
             Img = model.Img,
 
         };
-        Console.WriteLine("Artiest model");
         context.Add(a);
         context.SaveChanges();
         return a;
-
     }
 
     [HttpDelete]
@@ -60,17 +56,11 @@ public class ArtiestController : ControllerBase
                 context.SaveChanges();
             }
         }
-
-
     }
 }
 
-
-
 public class ArtiestModel
 {
-
     public string Naam { get; set; }
     public string Img { get; set; }
-
 }

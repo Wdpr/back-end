@@ -21,7 +21,7 @@ public class Voorstelling
     public int? Prijs { get; set; }
     public string? Genre { get; set; }
 
-[NotMapped]
+    [NotMapped]
     public DateTime? DatumDateTime { get; set; }
     [NotMapped]
     public DateTime? TijdDateTime { get; set; }
