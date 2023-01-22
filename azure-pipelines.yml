@@ -48,11 +48,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'webapiWDPR'
     publishLocation: 'Container'
-
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Gratis proefversie(2bce5fe6-6b21-4b16-a549-7bf47b41de1b)'
-    appType: 'webApp'
-    appName: 'WDPR-project'
-    package: '$(Build.ArtifactStagingDirectory)'
-    deploymentMethod: 'auto'
