@@ -55,11 +55,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-app.UseCors(options =>
-    options.WithOrigins(builder.Configuration["ClientUrl"])
-           .AllowAnyMethod()
-           .AllowAnyHeader()
-           .AllowCredentials());
+app.UseCors(options => options.WithOrigins(builder.Configuration["ClientUrl"]).AllowAnyHeader().AllowAnyMethod());
 
 app.UseAuthentication();
 app.UseAuthorization();
